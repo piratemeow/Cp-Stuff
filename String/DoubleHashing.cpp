@@ -7,7 +7,7 @@ using namespace std;
 // If the hash pair of two string are equal then the two strings are equal
 
 const int base1 = 127;
-const int m1 = 1e9 + 7; // alse 1e9+9 can be used
+const int m1 = 1e9 + 7; // also 1e9+9 can be used
 
 const int base2 = 211;
 const int m2 = 1e9 + 9;
