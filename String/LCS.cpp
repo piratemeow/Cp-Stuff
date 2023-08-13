@@ -166,7 +166,7 @@ int main ()
 	int mid;
 
 	int ans = 0;
-	int start=0; // Stores the staring position of LCS in the 'f' (2nd) string
+	int start=1; // Stores the staring position of LCS in the 'f' (2nd) string
 	int end =0; // Stores the ending positon of LCSS in the 'f' (2nd) string
 
 	while (l<=r)
