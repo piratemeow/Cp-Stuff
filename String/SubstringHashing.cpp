@@ -77,7 +77,7 @@ pair<int,int> getHash(string s)
 	return {hash1,hash2};
 }
 
-pair<long long,long long> pref[N];
+pair<int,int> pref[N];
 
 void buildPref(string s)
 {
