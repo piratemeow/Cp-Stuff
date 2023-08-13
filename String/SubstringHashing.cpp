@@ -41,11 +41,6 @@ void prec()
 {
 	power1[0]=1;
 	power2[0]=1;
-	for (int i=1;i<N;i++)
-	{
-		power1[i] = 1ll*power1[i-1]*base1%m1;
-		power2[i] = 1ll*power2[i-1]*base2%m2;
-	}
 
 	int inverse1 = bigmod(base1,m1-2,m1);
 	int inverse2 = bigmod(base2,m2-2,m2);
@@ -56,10 +51,14 @@ void prec()
 
 	for (int i=1;i<N;i++)
 	{
+		power1[i] = 1ll*power1[i-1]*base1%m1;
+		power2[i] = 1ll*power2[i-1]*base2%m2;
+
 		inv1[i] = 1ll*inv1[i-1]*inverse1%m1;
 		inv2[i] = 1ll*inv2[i-1]*inverse2%m2;
 	}
 
+	
 }
 
 
@@ -87,11 +86,12 @@ void buildPref(string s)
 	for (int i=0;i<s.size();i++)
 	{
 		hs1+=1ll*s[i]*power1[i]%m1;
+		hs1%=m1;
 		hs2+=1ll*s[i]*power2[i]%m2;
+		hs2%=m2;
 		pref[i]={hs1,hs2};
 	}
 }
-
 
 pair<int,int> getHashSub (int i, int j) // 0 based && indexing i<=j
 {
