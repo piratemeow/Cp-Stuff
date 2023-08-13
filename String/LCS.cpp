@@ -84,11 +84,11 @@ pair<int,int> getHash(string s)
 	return {hash1,hash2};
 }
 
-pair<long long,long long> pref1[N];
-pair<long long,long long> pref2[N];
+pair<int,int> pref1[N];
+pair<int,int> pref2[N];
 
 
-void buildPref(string s, pair<long long, long long> pref[])
+void buildPref(string s, pair<int,int> pref[])
 {
 	long long hs1 = 0;
 	long long hs2 = 0;
@@ -96,12 +96,14 @@ void buildPref(string s, pair<long long, long long> pref[])
 	{
 		hs1+=1ll*s[i]*power1[i]%m1;
 		hs2+=1ll*s[i]*power2[i]%m2;
+		hs1%=m1;
+		hs2%=m2;
 		pref[i]={hs1,hs2};
 	}
 }
 
 
-pair<int,int> getHashSub (int i, int j, pair<long long, long long> pref[]) // 0 based && indexing i<=j
+pair<int,int> getHashSub (int i, int j, pair<int,int> pref[]) // 0 based && indexing i<=j
 {
 	pair<int,int> ans;
 	if (i==0)
@@ -167,7 +169,7 @@ int main ()
 
 	int ans = 0;
 	int start=1; // Stores the staring position of LCS in the 'f' (2nd) string
-	int end =0; // Stores the ending positon of LCSS in the 'f' (2nd) string
+	int end =0; // Stores the ending position of LCS in the 'f' (2nd) string
 
 	while (l<=r)
 	{
