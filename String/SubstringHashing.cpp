@@ -93,7 +93,7 @@ void buildPref(string s)
 }
 
 
-pair<int,int> getHashSub (string s, int i, int j) // 0 based && indexing i<=j
+pair<int,int> getHashSub (int i, int j) // 0 based && indexing i<=j
 {
 	pair<int,int> ans;
 	if (i==0)
@@ -127,7 +127,7 @@ int main ()
 	buildPref(s); //To build prefix sum 
 
 	pair<int,int> s_hash = getHash(s);
-	pair<int,int> sub_hash = getHashSub(s,2,4);
+	pair<int,int> sub_hash = getHashSub(2,4);
 
 	cout<<s_hash.first<<" "<<s_hash.second<<endl;
 	cout<<sub_hash.first<<" "<<sub_hash.second<<endl;
