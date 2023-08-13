@@ -3,7 +3,7 @@ using namespace std;
 
 // Maximum length of the substring that has occurred at least k times
 // Uses hashing and binary search
-// Complexity O(nlogn^2)
+// Complexity O(n(logn)^2)
 
 // Substring hashing
 // formula ((pref[j]-pref[i-1])/base^i)%m
