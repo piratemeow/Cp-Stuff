@@ -134,7 +134,7 @@ int main ()
 	buildPref(s,pref1); //To build prefix sum of s
 	buildPref(f,pref2); //To build prefix sum of f
 
-	int l = 0;
+	int l = 1;
 	int r = s.size();
 
 	if (f.size()<s.size())
