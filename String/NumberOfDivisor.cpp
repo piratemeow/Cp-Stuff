@@ -83,7 +83,7 @@ pair<int,int> getHash(string s)
 	return {hash1,hash2};
 }
 
-pair<long long,long long> pref[N];
+pair<int,int> pref[N];
 
 void buildPref(string s)
 {
@@ -93,6 +93,8 @@ void buildPref(string s)
 	{
 		hs1+=1ll*s[i]*power1[i]%m1;
 		hs2+=1ll*s[i]*power2[i]%m2;
+		hs1%=m1;
+		hs2%=m2;
 		pref[i]={hs1,hs2};
 	}
 }
