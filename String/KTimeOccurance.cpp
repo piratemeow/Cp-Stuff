@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Maximum length of the substring that has occured at least k times
+// Maximum length of the substring that has occurred at least k times
 // Uses hashing and binary search
-// Complexity O(logn)
+// Complexity O(nlogn^2)
 
 // Substring hashing
 // formula ((pref[j]-pref[i-1])/base^i)%m
